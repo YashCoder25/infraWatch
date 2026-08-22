@@ -14,11 +14,14 @@ async function handle(res) {
 }
 
 export function fetchProjects() {
-  // On GitHub Pages there is no backend — fall back to the static data file.
-  if (import.meta.env.PROD) {
-    return fetch(`${import.meta.env.BASE_URL}data.json`).then(handle)
-  }
-  return fetch(`${BASE}/projects`).then(handle)
+  // Try the live API first; if it's unreachable (no server running, or GitHub
+  // Pages static hosting) fall back to the bundled public/data.json snapshot.
+  return fetch(`${BASE}/projects`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`API ${res.status}`)
+      return res.json()
+    })
+    .catch(() => fetch(`${import.meta.env.BASE_URL}data.json`).then(handle))
 }
 
 export function login(password) {
