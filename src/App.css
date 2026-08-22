@@ -1,0 +1,451 @@
+.app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 32px 60px;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.masthead__id { display: flex; align-items: center; gap: 14px; }
+
+.masthead__mark {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masthead h1 {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.masthead p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.view-switch {
+  display: flex;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.view-switch button {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+.view-switch button.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ---------- Summary strip ---------- */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.summary__card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--steel);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary__card--risk { border-left-color: var(--risk); }
+.summary__card--warn { border-left-color: var(--warn); }
+
+.summary__value {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.summary__label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+/* ---------- Workspace ---------- */
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ---------- Ledger ---------- */
+.ledger {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+}
+
+.ledger__head {
+  padding: 18px 20px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ledger__head h2 {
+  font-family: var(--display);
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+
+.ledger__head p {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+thead th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+}
+
+tbody td { padding: 12px 10px; vertical-align: top; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: rgba(51, 82, 111, 0.06); }
+tbody tr.is-selected { background: rgba(51, 82, 111, 0.12); }
+
+.mono { font-family: var(--mono); font-size: 12px; }
+
+.ledger__name { font-weight: 500; max-width: 220px; }
+.ledger__ministry { display: block; font-size: 12.5px; }
+.ledger__agency { display: block; font-size: 11.5px; color: var(--ink-soft); }
+
+.progress {
+  position: relative;
+  height: 6px;
+  background: var(--line);
+  border-radius: 3px;
+  width: 130px;
+  margin-bottom: 4px;
+}
+
+.progress__planned {
+  position: absolute;
+  top: -3px;
+  height: 12px;
+  border-right: 2px solid var(--ink);
+}
+
+.progress__actual { position: absolute; height: 6px; border-radius: 3px; }
+.progress__actual--on-track { background: var(--ok); }
+.progress__actual--at-risk { background: var(--warn); }
+.progress__actual--delayed { background: var(--risk); }
+
+.progress__figures { color: var(--ink-soft); }
+
+.fresh-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); }
+.fresh-dot i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.fresh-dot--fresh i { background: var(--ok); }
+.fresh-dot--aging i { background: var(--warn); }
+.fresh-dot--stale i { background: var(--risk); }
+
+/* ---------- Stamp (signature element) ---------- */
+.stamp {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1.5px solid;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+}
+
+.stamp--on-track { color: var(--ok); border-color: var(--ok); background: var(--ok-bg); }
+.stamp--at-risk { color: var(--warn); border-color: var(--warn); background: var(--warn-bg); }
+.stamp--delayed { color: var(--risk); border-color: var(--risk); background: var(--risk-bg); transform: rotate(2deg); }
+
+/* ---------- Issue panel ---------- */
+.issue-panel {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 18px 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.issue-panel--empty { color: var(--ink-soft); font-size: 13.5px; }
+
+.issue-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.issue-panel h3 {
+  font-family: var(--display);
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+
+.issue-panel__facts { margin: 0 0 14px; font-size: 13px; }
+.issue-panel__facts div { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px dashed var(--line); }
+.issue-panel__facts dt { color: var(--ink-soft); }
+.issue-panel__facts dd { margin: 0; text-align: right; }
+
+.corrective h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  margin: 14px 0 6px;
+}
+
+.corrective__cause { font-size: 13.5px; margin: 0 0 10px; }
+.corrective--clear { color: var(--ok); font-size: 13.5px; }
+
+.chip {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--mono);
+}
+.chip--overdue { background: var(--risk-bg); color: var(--risk); }
+.chip--in-progress { background: var(--warn-bg); color: var(--warn); }
+
+/* ---------- Footer ---------- */
+.footnote {
+  margin-top: 26px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.ledger__empty {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 26px 10px;
+  font-size: 13.5px;
+}
+
+.ledger__rowactions { display: flex; gap: 6px; white-space: nowrap; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-family: var(--body);
+  font-size: 12.5px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.btn--primary { background: var(--ink); color: var(--paper); }
+.btn--primary:hover { background: var(--steel-deep); }
+
+.btn--ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.btn--ghost:hover { background: var(--paper); }
+
+.btn--icon { background: transparent; border-color: var(--line); padding: 4px 9px; font-size: 11.5px; }
+.btn--icon:hover { background: var(--paper); }
+.btn--danger { color: var(--risk); border-color: var(--risk-bg); }
+.btn--danger:hover { background: var(--risk-bg); }
+
+.btn--link { background: none; border: none; color: var(--steel); text-decoration: underline; cursor: pointer; padding: 0; margin-left: 8px; font-size: 12px; }
+
+/* ---------- Modal + Form ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 23, 31, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+.modal__panel {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 22px 24px;
+}
+
+.pform h3 {
+  font-family: var(--display);
+  margin: 0 0 14px;
+  font-size: 19px;
+}
+
+.pform label {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+.pform input, .pform select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.pform__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pform__row label { min-width: 0; }
+
+.pform__check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink); }
+.pform__check input { width: auto; margin: 0; }
+
+.pform__issue {
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  padding: 12px 14px 2px;
+  margin: 4px 0 14px;
+}
+
+.pform__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.app-status {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: var(--body);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .workspace { grid-template-columns: 1fr; }
+  .summary { grid-template-columns: repeat(2, 1fr); }
+  .pform__row { grid-template-columns: 1fr; }
+}
+
+/* ---------- Admin bar ---------- */
+.admin-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-bar__error { margin: 0 0 16px; }
+
+/* ---------- Admin login ---------- */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-login__panel {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  width: 100%;
+  max-width: 360px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.admin-login__panel .masthead__mark { margin-bottom: 10px; }
+
+.admin-login__panel h1 {
+  font-family: var(--display);
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+
+.admin-login__panel p {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.admin-login__panel label {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+.admin-login__panel input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.admin-login__panel .btn { margin-bottom: 14px; }
+
+.admin-login__error {
+  color: var(--risk);
+  font-size: 13px;
+  margin: -8px 0 14px;
+}

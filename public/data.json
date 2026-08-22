@@ -1,0 +1,92 @@
+[
+  {
+    "id": "IW-2201",
+    "name": "Chennai–Bengaluru Expressway, Pkg 4",
+    "agency": "NHAI",
+    "ministry": "Road Transport & Highways",
+    "budgetCr": 1840,
+    "spentCr": 1310,
+    "planned": 78,
+    "actual": 61,
+    "lastUpdate": 1,
+    "issue": {
+      "cause": "Land acquisition dispute, Vellore stretch",
+      "action": "District collector to conclude compensation hearing",
+      "owner": "Tamil Nadu Revenue Dept.",
+      "due": "2026-09-14",
+      "status": "in-progress"
+    }
+  },
+  {
+    "id": "IW-1187",
+    "name": "Patna Metro Corridor II",
+    "agency": "PMRC",
+    "ministry": "Housing & Urban Affairs",
+    "budgetCr": 3120,
+    "spentCr": 1440,
+    "planned": 44,
+    "actual": 43,
+    "lastUpdate": 3,
+    "issue": null
+  },
+  {
+    "id": "IW-0932",
+    "name": "Godavari Barrage Rehabilitation",
+    "agency": "CWC",
+    "ministry": "Jal Shakti",
+    "budgetCr": 612,
+    "spentCr": 598,
+    "planned": 92,
+    "actual": 90,
+    "lastUpdate": 2,
+    "issue": null
+  },
+  {
+    "id": "IW-1650",
+    "name": "Guwahati Sewerage Network Ph. II",
+    "agency": "Assam PWD",
+    "ministry": "Housing & Urban Affairs",
+    "budgetCr": 470,
+    "spentCr": 410,
+    "planned": 70,
+    "actual": 49,
+    "lastUpdate": 12,
+    "issue": {
+      "cause": "Contractor funding shortfall, third-party audit pending",
+      "action": "Release withheld tranche pending audit sign-off",
+      "owner": "State Finance Dept.",
+      "due": "2026-08-30",
+      "status": "overdue"
+    }
+  },
+  {
+    "id": "IW-2044",
+    "name": "Rewa Ultra Mega Solar Extension",
+    "agency": "MPUVNL",
+    "ministry": "New & Renewable Energy",
+    "budgetCr": 940,
+    "spentCr": 720,
+    "planned": 66,
+    "actual": 68,
+    "lastUpdate": 1,
+    "issue": null
+  },
+  {
+    "id": "IW-0871",
+    "name": "Kandla Port Container Terminal",
+    "agency": "Deendayal Port Authority",
+    "ministry": "Ports, Shipping & Waterways",
+    "budgetCr": 2260,
+    "spentCr": 1975,
+    "planned": 85,
+    "actual": 63,
+    "lastUpdate": 6,
+    "issue": {
+      "cause": "Dredging equipment delay from OEM",
+      "action": "Expedite import clearance, deploy backup dredger",
+      "owner": "Port Authority Engineering Cell",
+      "due": "2026-09-05",
+      "status": "in-progress"
+    }
+  }
+]
