@@ -14,6 +14,10 @@ async function handle(res) {
 }
 
 export function fetchProjects() {
+  // On GitHub Pages there is no backend — fall back to the static data file.
+  if (import.meta.env.PROD) {
+    return fetch(`${import.meta.env.BASE_URL}data.json`).then(handle)
+  }
   return fetch(`${BASE}/projects`).then(handle)
 }
 
